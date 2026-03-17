@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+<html lang="el" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Σοφία Νικολάκη | Ψυχοθεραπεία & Life Coaching – Πόρτο Ράφτη & Μαρκόπουλο</title>
+<meta name="description" content="Ψυχοθεραπεύτρια, Σύμβουλος Ψυχικής Υγείας και Πιστοποιημένη Life Coach στο Πόρτο Ράφτη και Μαρκόπουλο. Θεραπεία Ζεύγους, Life Coaching, Διαχείριση Άγχους.">
+<link rel="icon" href="https://github.com/agelmet/NIKOLAKI/blob/main/logog.jpg?raw=true" type="image/jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        cream: '#F8F3EE',
+        deep: '#1A1520',
+        mauve: '#B8938A',
+        burgundy: '#5C3040',
+        sand: '#D4C2B0',
+        blush: '#EAD7CE',
+        charcoal: '#2C2535',
+        mist: '#E9E2DC',
+        rose: '#C9A49A',
+      },
+      fontFamily: {
+        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+        sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
+      }
+    }
+  }
+}
+</script>
+
+<style>
+/* ===== BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --cream: #F8F3EE;
+  --deep: #1A1520;
+  --mauve: #B8938A;
+  --burgundy: #5C3040;
+  --sand: #D4C2B0;
+  --blush: #EAD7CE;
+  --charcoal: #2C2535;
+  --mist: #E9E2DC;
+  --rose: #C9A49A;
+}
+
+html { font-size: 16px; }
+
+body {
+  background: var(--cream);
+  color: var(--charcoal);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: var(--mauve); color: #fff; }
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: var(--sand); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--mauve); }
+
+/* ===== NOISE TEXTURE OVERLAY ===== */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.4;
+}
+
+/* ===== TYPOGRAPHY ===== */
+.font-serif { font-family: 'Cormorant Garamond', Georgia, serif; }
+
+h1,h2,h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; line-height: 1.1; }
+
+.no-accent { text-transform: uppercase; }
+
+/* ===== GLASS ===== */
+.glass {
+  background: rgba(248, 243, 238, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 194, 176, 0.3);
+}
+
+.glass-dark {
+  background: rgba(26, 21, 32, 0.55);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ===== NAV ===== */
+#navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.25rem 1.5rem; transition: padding 0.4s ease; }
+#navbar.scrolled { padding: 0.75rem 1.5rem; }
+.nav-inner { max-width: 1280px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1.5rem; border-radius: 100px; transition: all 0.4s ease; }
+.nav-link { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--charcoal); transition: color 0.3s; text-decoration: none; }
+.nav-link:hover { color: var(--mauve); }
+.nav-cta {
+  font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+  background: var(--burgundy); color: #fff; padding: 0.6rem 1.4rem; border-radius: 100px;
+  text-decoration: none; transition: all 0.3s ease;
+}
+.nav-cta:hover { background: var(--mauve); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(92, 48, 64, 0.25); }
+
+/* ===== HERO ===== */
+#hero {
+  position: relative; min-height: 100svh; display: flex; align-items: flex-end;
+  overflow: hidden; padding: 0 1.5rem 5rem;
+}
+.hero-bg {
+  position: absolute; inset: 0; z-index: 0;
+  background-image: url('https://github.com/agelmet/NIKOLAKI/blob/main/11.jpg?raw=true');
+  background-size: cover; background-position: center;
+  transform-origin: center;
+  animation: kenburns 24s ease-out both infinite alternate;
+}
+@keyframes kenburns {
+  from { transform: scale(1.08); }
+  to { transform: scale(1.0); }
+}
+.hero-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(to top, rgba(26,21,32,0.95) 0%, rgba(26,21,32,0.55) 45%, rgba(26,21,32,0.25) 100%); }
+.hero-overlay-side { position: absolute; inset: 0; z-index: 1; background: linear-gradient(100deg, rgba(26,21,32,0.8) 0%, transparent 70%); }
+
+/* Particles */
+.particle {
+  position: absolute; border-radius: 50%; pointer-events: none; z-index: 2;
+  background: radial-gradient(circle, rgba(200,164,154,0.6) 0%, transparent 70%);
+  animation: float-particle linear infinite;
+}
+@keyframes float-particle {
+  0% { transform: translateY(0px) translateX(0px) scale(1); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 0.6; }
+  100% { transform: translateY(-80vh) translateX(30px) scale(0.5); opacity: 0; }
+}
+
+.hero-content { position: relative; z-index: 10; max-width: 1280px; margin: 0 auto; width: 100%; }
+
+/* ===== ANIMATED TEXT REVEAL ===== */
+.text-reveal-line { overflow: hidden; }
+.text-reveal-inner {
+  display: block;
+  transform: translateY(110%);
+  animation: revealmove 1.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+@keyframes revealmove { to { transform: translateY(0); } }
+
+.badge-float {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.45rem 1rem; border-radius: 100px;
+  font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500;
+  color: rgba(234, 215, 206, 0.9);
+  border: 1px solid rgba(200, 164, 154, 0.3);
+  background: rgba(200,164,154,0.12);
+  backdrop-filter: blur(10px);
+  margin-bottom: 1.5rem;
+  opacity: 0; animation: fadein 0.8s 0.2s forwards;
+}
+@keyframes fadein { to { opacity: 1; } }
+
+.hero-title {
+  font-size: clamp(2.8rem, 6vw, 6rem); color: #fff;
+  font-weight: 300; margin-bottom: 1.5rem; max-width: 860px;
+  text-shadow: 0 4px 24px rgba(0,0,0,0.25);
+}
+.hero-title em { font-style: italic; color: var(--rose); }
+.hero-sub { font-size: 1rem; color: rgba(255,255,255,0.65); max-width: 460px; line-height: 1.8; margin-bottom: 2.5rem; font-weight: 300; opacity: 0; animation: fadein 0.8s 1.2s forwards; }
+
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  padding: 1rem 2rem; border-radius: 100px;
+  background: var(--mauve); color: #fff; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+  text-decoration: none; transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 12px 32px rgba(184,147,138,0.35);
+}
+.btn-primary:hover { background: #fff; color: var(--burgundy); box-shadow: 0 16px 40px rgba(184,147,138,0.4); transform: translateY(-2px); }
+
+.btn-outline {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  padding: 1rem 2rem; border-radius: 100px;
+  border: 1px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.85);
+  font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+  text-decoration: none; transition: all 0.35s;
+  backdrop-filter: blur(8px);
+}
+.btn-outline:hover { border-color: rgba(255,255,255,0.7); color: #fff; background: rgba(255,255,255,0.07); }
+
+.hero-scroll-hint {
+  position: absolute; bottom: 2.5rem; right: 2.5rem; z-index: 10;
+  display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+  color: rgba(255,255,255,0.4); font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase;
+  opacity: 0; animation: fadein 1s 2s forwards;
+}
+.scroll-line { width: 1px; height: 48px; background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.4)); animation: scroll-pulse 2s ease-in-out infinite; }
+@keyframes scroll-pulse { 0%,100% { opacity: 0.3; transform: scaleY(0.6); } 50% { opacity: 1; transform: scaleY(1); } }
+
+/* ===== SECTION SHARED ===== */
+.section-label { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500; color: var(--mauve); margin-bottom: 0.75rem; }
+.section-divider { width: 3rem; height: 1px; background: linear-gradient(to right, var(--mauve), transparent); margin: 1.25rem 0; }
+.section-divider-center { width: 3rem; height: 1px; background: linear-gradient(to right, transparent, var(--mauve), transparent); margin: 1.25rem auto; }
+
+/* ===== REVEAL ===== */
+.reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.9s cubic-bezier(0.4,0,0.2,1), transform 0.9s cubic-bezier(0.4,0,0.2,1); }
+.reveal.active { opacity: 1; transform: translateY(0); }
+.reveal-left { opacity: 0; transform: translateX(-32px); transition: opacity 0.9s cubic-bezier(0.4,0,0.2,1), transform 0.9s cubic-bezier(0.4,0,0.2,1); }
+.reveal-left.active { opacity: 1; transform: translateX(0); }
+.reveal-right { opacity: 0; transform: translateX(32px); transition: opacity 0.9s cubic-bezier(0.4,0,0.2,1), transform 0.9s cubic-bezier(0.4,0,0.2,1); }
+.reveal-right.active { opacity: 1; transform: translateX(0); }
+.d1 { transition-delay: 0.1s; } .d2 { transition-delay: 0.2s; } .d3 { transition-delay: 0.3s; } .d4 { transition-delay: 0.4s; }
+
+/* ===== ABOUT ===== */
+#about { padding: 7rem 1.5rem; background: var(--cream); }
+.about-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+@media (max-width: 900px) { .about-inner { grid-template-columns: 1fr; gap: 3rem; } }
+
+.portrait-frame {
+  position: relative;
+}
+.portrait-outer {
+  position: relative;
+  border-radius: 2rem;
+  overflow: hidden;
+  aspect-ratio: 4/5;
+  box-shadow: 0 40px 80px rgba(92,48,64,0.15), 0 8px 24px rgba(0,0,0,0.06);
+}
+.portrait-outer img {
+  width: 100%; height: 100%; object-fit: cover; object-position: top center;
+  transition: transform 12s ease-out;
+}
+.portrait-outer:hover img { transform: scale(1.04); }
+
+.portrait-deco-1 {
+  position: absolute; bottom: -2rem; left: -2rem; width: 10rem; height: 10rem;
+  border-radius: 50%; background: radial-gradient(circle, rgba(184,147,138,0.2) 0%, transparent 70%);
+  z-index: -1;
+}
+.portrait-deco-2 {
+  position: absolute; top: -1.5rem; right: -1.5rem;
+  width: 6rem; height: 6rem; border: 1px solid rgba(184,147,138,0.3); border-radius: 50%;
+  z-index: -1;
+}
+.portrait-badge {
+  position: absolute; bottom: 2rem; left: -2.5rem;
+  background: var(--deep); color: #fff;
+  padding: 1rem 1.25rem; border-radius: 1rem;
+  box-shadow: 0 16px 40px rgba(26,21,32,0.25);
+  display: flex; align-items: center; gap: 0.75rem;
+  border: 1px solid rgba(255,255,255,0.07);
+  backdrop-filter: blur(12px);
+  animation: float-badge 6s ease-in-out infinite;
+  z-index: 10;
+}
+@keyframes float-badge {
+  0%,100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+.portrait-badge-icon { width: 2.5rem; height: 2.5rem; background: var(--mauve); border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.portrait-badge p { font-size: 0.8rem; font-weight: 600; color: #fff; margin: 0; }
+.portrait-badge span { font-size: 0.68rem; color: rgba(255,255,255,0.5); }
+
+.about-text h2 { font-size: clamp(2.5rem, 4vw, 3.8rem); color: var(--deep); margin-bottom: 1.5rem; }
+.about-text h2 em { font-style: italic; color: var(--mauve); }
+.about-text p { font-size: 0.96rem; line-height: 1.85; color: #5a5060; margin-bottom: 1.25rem; font-weight: 300; }
+.about-blockquote {
+  border-left: 2px solid var(--mauve); padding: 0.75rem 1.25rem;
+  background: rgba(184,147,138,0.07); border-radius: 0 0.75rem 0.75rem 0;
+  margin: 1.75rem 0; font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem; font-style: italic; color: var(--burgundy); line-height: 1.65;
+}
+.cred-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+.cred-chip {
+  font-size: 0.68rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 0.35rem 0.9rem; border-radius: 100px;
+  border: 1px solid rgba(184,147,138,0.35); color: var(--mauve);
+  background: rgba(184,147,138,0.06);
+}
+
+/* ===== SERVICES ===== */
+#services { padding: 7rem 1.5rem; background: #fff; }
+.services-inner { max-width: 1280px; margin: 0 auto; }
+.services-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 4rem; flex-wrap: wrap; gap: 2rem; }
+.services-header h2 { font-size: clamp(2.5rem, 4vw, 3.8rem); color: var(--deep); max-width: 500px; }
+.services-header h2 em { font-style: italic; color: var(--mauve); }
+
+.services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+@media (max-width: 768px) { .services-grid { grid-template-columns: 1fr; } }
+.services-grid .service-large { grid-column: 1 / -1; }
+
+.service-card {
+  position: relative; padding: 2.5rem; border-radius: 1.5rem; overflow: hidden;
+  border: 1px solid rgba(212,194,176,0.3);
+  transition: all 0.5s cubic-bezier(0.4,0,0.2,1);
+  background: var(--cream);
+  cursor: default;
+}
+.service-card::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(circle at 80% 20%, rgba(184,147,138,0.12) 0%, transparent 60%);
+  opacity: 0; transition: opacity 0.5s;
+}
+.service-card:hover::before { opacity: 1; }
+.service-card:hover { transform: translateY(-6px); box-shadow: 0 32px 64px rgba(92,48,64,0.1), 0 8px 24px rgba(0,0,0,0.05); border-color: rgba(184,147,138,0.4); }
+
+.service-large { padding: 3rem; }
+.service-large .service-icon-wrap { width: 4rem; height: 4rem; border-radius: 1.25rem; }
+
+.service-num {
+  position: absolute; top: 1.5rem; right: 2rem;
+  font-family: 'Cormorant Garamond', serif; font-size: 5rem; font-weight: 300;
+  color: rgba(92,48,64,0.06); line-height: 1; user-select: none;
+  transition: color 0.5s;
+}
+.service-card:hover .service-num { color: rgba(92,48,64,0.1); }
+
+.service-icon-wrap {
+  width: 3.5rem; height: 3.5rem; border-radius: 1rem;
+  background: linear-gradient(135deg, var(--blush), var(--sand));
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
+  flex-shrink: 0;
+}
+.service-card:hover .service-icon-wrap { transform: translateY(-3px) scale(1.05); }
+
+.service-card h3 { font-size: clamp(1.3rem, 2vw, 1.75rem); color: var(--deep); margin-bottom: 0.75rem; font-weight: 400; }
+.service-large h3 { font-size: clamp(1.5rem, 2.5vw, 2.1rem); }
+.service-card p { font-size: 0.88rem; color: #6e6576; line-height: 1.8; font-weight: 300; }
+.service-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1.25rem; }
+.service-tag { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; padding: 0.3rem 0.75rem; border-radius: 100px; background: rgba(92,48,64,0.07); color: var(--burgundy); }
+
+/* ===== IDENTITY / PILLARS ===== */
+#identity { padding: 7rem 1.5rem; background: var(--deep); color: #fff; overflow: hidden; position: relative; }
+.identity-deco-1 { position: absolute; top: -20%; right: -10%; width: 50rem; height: 50rem; border-radius: 50%; background: radial-gradient(circle, rgba(184,147,138,0.12) 0%, transparent 60%); pointer-events: none; }
+.identity-deco-2 { position: absolute; bottom: -20%; left: -10%; width: 40rem; height: 40rem; border-radius: 50%; background: radial-gradient(circle, rgba(92,48,64,0.25) 0%, transparent 60%); pointer-events: none; }
+
+.identity-inner { max-width: 1280px; margin: 0 auto; position: relative; z-index: 1; }
+.identity-header { text-align: center; margin-bottom: 5rem; }
+.identity-header h2 { font-size: clamp(2.5rem, 4vw, 4rem); color: #fff; }
+.identity-header h2 em { font-style: italic; color: var(--rose); }
+
+.identity-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+@media (max-width: 768px) { .identity-grid { grid-template-columns: 1fr; } }
+
+.identity-card {
+  padding: 2.5rem; border-radius: 1.5rem;
+  border: 1px solid rgba(255,255,255,0.07);
+  background: rgba(255,255,255,0.04);
+  transition: all 0.4s;
+  position: relative; overflow: hidden;
+}
+.identity-card::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(to right, transparent, var(--mauve), transparent);
+  transform: scaleX(0); transition: transform 0.5s; transform-origin: center;
+}
+.identity-card:hover::after { transform: scaleX(1); }
+.identity-card:hover { background: rgba(255,255,255,0.07); border-color: rgba(184,147,138,0.2); }
+
+.identity-icon { width: 3rem; height: 3rem; border-radius: 0.875rem; background: rgba(184,147,138,0.15); border: 1px solid rgba(184,147,138,0.2); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; }
+.identity-card h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: #fff; margin-bottom: 0.75rem; font-weight: 400; }
+.identity-card p { font-size: 0.875rem; color: rgba(255,255,255,0.5); line-height: 1.8; font-weight: 300; }
+.identity-card .identity-num { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; position: absolute; top: 1rem; right: 1.5rem; color: rgba(255,255,255,0.04); font-weight: 300; user-select: none; line-height: 1; }
+
+.identity-image-col { position: relative; border-radius: 1.5rem; overflow: hidden; }
+.identity-image-col img { width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: grayscale(20%) brightness(0.85); transition: all 0.8s ease; }
+.identity-image-col:hover img { filter: grayscale(0%) brightness(0.9); }
+.identity-image-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,21,32,0.7) 0%, transparent 50%); }
+.identity-image-text { position: absolute; bottom: 2rem; left: 2rem; right: 2rem; color: #fff; }
+.identity-image-text p { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rose); margin-bottom: 0.5rem; }
+.identity-image-text h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; color: #fff; line-height: 1.4; }
+
+/* ===== GALLERY / SPACE ===== */
+#space { padding: 7rem 1.5rem; background: var(--cream); }
+.space-inner { max-width: 1280px; margin: 0 auto; }
+
+.gallery-masonry {
+  columns: 3; column-gap: 1.25rem;
+}
+@media (max-width: 900px) { .gallery-masonry { columns: 2; } }
+@media (max-width: 560px) { .gallery-masonry { columns: 1; } }
+
+.gallery-item {
+  break-inside: avoid; margin-bottom: 1.25rem;
+  border-radius: 1.25rem; overflow: hidden;
+  cursor: zoom-in; position: relative;
+  display: block;
+  border: none; background: none; padding: 0;
+}
+.gallery-item img { width: 100%; height: auto; display: block; transition: transform 0.7s cubic-bezier(0.4,0,0.2,1); }
+.gallery-item:hover img { transform: scale(1.04); }
+.gallery-item-overlay {
+  position: absolute; inset: 0;
+  background: rgba(26,21,32,0.35);
+  opacity: 0; transition: opacity 0.4s;
+  display: flex; align-items: center; justify-content: center;
+}
+.gallery-item:hover .gallery-item-overlay { opacity: 1; }
+
+/* ===== LIGHTBOX ===== */
+#lightbox {
+  position: fixed; inset: 0; z-index: 1000;
+  background: rgba(26,21,32,0.96);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+#lightbox.active { opacity: 1; pointer-events: all; }
+#lightbox img {
+  max-width: 90vw; max-height: 90vh; object-fit: contain;
+  border-radius: 1rem; box-shadow: 0 40px 100px rgba(0,0,0,0.6);
+  transform: scale(0.92) translateY(12px);
+  transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
+}
+#lightbox.active img { transform: scale(1) translateY(0); }
+#lightbox-close {
+  position: absolute; top: 1.5rem; right: 1.5rem;
+  width: 3rem; height: 3rem; border-radius: 50%;
+  background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15);
+  color: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: background 0.3s; backdrop-filter: blur(8px);
+}
+#lightbox-close:hover { background: rgba(255,255,255,0.2); }
+
+/* ===== REVIEWS ===== */
+#reviews { padding: 7rem 1.5rem; background: #fff; overflow: hidden; }
+.reviews-inner { max-width: 1280px; margin: 0 auto; }
+.reviews-header { text-align: center; margin-bottom: 4rem; }
+.reviews-header h2 { font-size: clamp(2.5rem, 4vw, 3.8rem); color: var(--deep); }
+.reviews-header h2 em { font-style: italic; color: var(--mauve); }
+
+.carousel-wrapper { position: relative; }
+.carousel-track-outer { overflow: hidden; border-radius: 1.5rem; }
+.carousel-track { display: flex; gap: 1.5rem; transition: transform 0.5s cubic-bezier(0.4,0,0.2,1); }
+
+.review-card {
+  flex: 0 0 calc(33.333% - 1rem); min-width: 300px;
+  background: var(--cream); border: 1px solid rgba(212,194,176,0.35);
+  border-radius: 1.5rem; padding: 2rem; position: relative; overflow: hidden;
+}
+@media (max-width: 900px) { .review-card { flex: 0 0 calc(50% - 0.75rem); } }
+@media (max-width: 560px) { .review-card { flex: 0 0 calc(100%); } }
+
+.review-card::before { content: '"'; font-family: 'Cormorant Garamond', serif; font-size: 8rem; color: rgba(184,147,138,0.1); position: absolute; top: -1.5rem; right: 1rem; line-height: 1; pointer-events: none; }
+
+.review-stars { display: flex; gap: 0.25rem; margin-bottom: 1rem; }
+.review-score { font-family: 'Cormorant Garamond', serif; font-size: 1.75rem; font-weight: 400; color: var(--deep); margin-bottom: 0.5rem; }
+.review-text { font-size: 0.88rem; color: #6e6576; line-height: 1.8; font-weight: 300; font-style: italic; margin-bottom: 1.25rem; }
+.review-footer { border-top: 1px solid rgba(212,194,176,0.3); padding-top: 1rem; display: flex; justify-content: space-between; align-items: center; }
+.review-name { font-size: 0.75rem; font-weight: 600; color: var(--deep); letter-spacing: 0.08em; text-transform: uppercase; }
+.review-date { font-size: 0.68rem; color: var(--mauve); margin-top: 0.15rem; }
+.da-logo { height: 14px; opacity: 0.45; }
+
+.carousel-nav { display: flex; gap: 0.75rem; justify-content: center; margin-top: 2.5rem; }
+.carousel-btn {
+  width: 2.75rem; height: 2.75rem; border-radius: 50%;
+  border: 1px solid rgba(92,48,64,0.25); background: #fff;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  color: var(--burgundy); transition: all 0.3s;
+}
+.carousel-btn:hover { background: var(--burgundy); color: #fff; border-color: var(--burgundy); }
+.reviews-cta { text-align: center; margin-top: 2.5rem; }
+.reviews-cta a { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.75rem; border-radius: 100px; background: var(--cream); border: 1px solid rgba(92,48,64,0.2); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--burgundy); text-decoration: none; transition: all 0.3s; }
+.reviews-cta a:hover { background: var(--burgundy); color: #fff; border-color: var(--burgundy); }
+
+/* ===== FOOTER / CONTACT ===== */
+#contact { background: var(--deep); color: #fff; padding: 6rem 1.5rem 3rem; position: relative; overflow: hidden; }
+.footer-deco { position: absolute; top: -15%; right: -10%; width: 40rem; height: 40rem; border-radius: 50%; background: radial-gradient(circle, rgba(92,48,64,0.3) 0%, transparent 65%); pointer-events: none; }
+
+.footer-inner { max-width: 1280px; margin: 0 auto; position: relative; z-index: 1; }
+.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 4rem; margin-bottom: 4rem; }
+@media (max-width: 1024px) { .footer-top { grid-template-columns: 1fr 1fr; gap: 2.5rem; } }
+@media (max-width: 640px) { .footer-top { grid-template-columns: 1fr; gap: 2rem; } }
+
+.footer-brand h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.75rem; color: #fff; margin-bottom: 0.5rem; }
+.footer-brand p { font-size: 0.875rem; color: rgba(255,255,255,0.4); line-height: 1.8; max-width: 320px; font-weight: 300; margin-bottom: 1.5rem; }
+.footer-logo { width: 4.5rem; height: 4.5rem; border-radius: 50%; overflow: hidden; border: 2px solid rgba(184,147,138,0.3); margin-bottom: 1.25rem; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+.footer-logo img { width: 100%; height: 100%; object-fit: cover; }
+
+.footer-col h4 { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.35); font-weight: 500; margin-bottom: 1.5rem; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.875rem; }
+.footer-col ul li { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.83rem; color: rgba(255,255,255,0.55); line-height: 1.55; font-weight: 300; }
+.footer-col ul li a { color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.3s; }
+.footer-col ul li a:hover { color: var(--rose); }
+.footer-col ul li .fi { flex-shrink: 0; width: 1rem; height: 1rem; color: var(--mauve); margin-top: 0.1rem; }
+
+.social-links { display: flex; gap: 0.75rem; margin-top: 0.5rem; }
+.social-link {
+  width: 2.25rem; height: 2.25rem; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.04);
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,0.45); transition: all 0.3s; text-decoration: none;
+}
+.social-link:hover { background: var(--mauve); border-color: var(--mauve); color: #fff; transform: translateY(-2px); }
+
+.footer-cta-btn {
+  display: inline-flex; align-items: center; gap: 0.75rem;
+  padding: 0.875rem 1.75rem; border-radius: 100px;
+  background: var(--mauve); color: #fff;
+  font-size: 0.75rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+  text-decoration: none; transition: all 0.35s;
+  box-shadow: 0 8px 24px rgba(184,147,138,0.25);
+}
+.footer-cta-btn:hover { background: #fff; color: var(--burgundy); }
+
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+.footer-bottom p { font-size: 0.75rem; color: rgba(255,255,255,0.25); }
+.footer-bottom a { color: rgba(255,255,255,0.25); text-decoration: none; transition: color 0.3s; }
+.footer-bottom a:hover { color: var(--rose); }
+.footer-bottom .by { font-size: 0.75rem; color: rgba(255,255,255,0.25); }
+.footer-bottom .by a { font-weight: 600; color: rgba(255,255,255,0.5); }
+.footer-bottom .by a:hover { color: var(--rose); }
+
+/* ===== NAV LOGO ===== */
+.nav-logo-circle {
+  width: 3.25rem; height: 3.25rem; border-radius: 50%; overflow: hidden;
+  border: 2px solid rgba(184,147,138,0.35);
+  box-shadow: 0 4px 16px rgba(184,147,138,0.2);
+  transition: all 0.4s; flex-shrink: 0;
+}
+.nav-logo-circle:hover { border-color: var(--mauve); box-shadow: 0 6px 24px rgba(184,147,138,0.35); transform: scale(1.05); }
+.nav-logo-circle img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ===== MOBILE MENU ===== */
+#mobile-menu {
+  position: absolute; top: 100%; left: 1rem; right: 1rem;
+  background: rgba(248,243,238,0.98); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border-radius: 1.5rem; border: 1px solid rgba(212,194,176,0.3);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+  padding: 2rem; display: flex; flex-direction: column; gap: 1.25rem;
+  transform: translateY(-8px); opacity: 0; pointer-events: none;
+  transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
+}
+#mobile-menu.open { transform: translateY(0); opacity: 1; pointer-events: all; }
+#mobile-menu a { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--charcoal); text-decoration: none; padding: 0.5rem 0; border-bottom: 1px solid rgba(212,194,176,0.2); transition: color 0.3s; }
+#mobile-menu a:last-child { border-bottom: none; }
+#mobile-menu a:hover { color: var(--mauve); }
+#mobile-menu .mob-cta { background: var(--burgundy); color: #fff !important; padding: 0.75rem 1.25rem !important; border-radius: 100px; text-align: center; border: none !important; }
+
+/* ===== STATS BAR ===== */
+.stats-bar { background: var(--burgundy); padding: 2.5rem 1.5rem; }
+.stats-bar-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+@media (max-width: 768px) { .stats-bar-inner { grid-template-columns: repeat(2, 1fr); } }
+.stat-item { text-align: center; }
+.stat-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem; color: #fff; font-weight: 300; line-height: 1; }
+.stat-label { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-top: 0.35rem; }
+
+/* ===== MOBILE HAMBURGER ===== */
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+.hamburger span { display: block; width: 22px; height: 2px; background: var(--charcoal); border-radius: 2px; transition: all 0.3s; }
+@media (max-width: 1024px) { .hamburger { display: flex; } .desktop-nav { display: none; } }
+
+/* ===== PROCESS SECTION ===== */
+#process { padding: 7rem 1.5rem; background: var(--mist); }
+.process-inner { max-width: 1280px; margin: 0 auto; }
+.process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-top: 4rem; position: relative; }
+@media (max-width: 900px) { .process-steps { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 540px) { .process-steps { grid-template-columns: 1fr; } }
+
+.process-steps::before {
+  content: ''; position: absolute; top: 2.5rem; left: 6%; right: 6%; height: 1px;
+  background: linear-gradient(to right, transparent, rgba(184,147,138,0.3) 20%, rgba(184,147,138,0.3) 80%, transparent);
+  z-index: 0;
+}
+@media (max-width: 900px) { .process-steps::before { display: none; } }
+
+.process-step { position: relative; z-index: 1; text-align: center; }
+.process-dot {
+  width: 5rem; height: 5rem; border-radius: 50%;
+  border: 1px solid rgba(184,147,138,0.35);
+  background: #fff; display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 1.5rem;
+  box-shadow: 0 4px 24px rgba(184,147,138,0.15);
+  transition: all 0.4s;
+}
+.process-step:hover .process-dot { background: var(--mauve); border-color: var(--mauve); transform: scale(1.08); box-shadow: 0 8px 32px rgba(184,147,138,0.35); }
+.process-step:hover .process-dot svg { color: #fff !important; }
+.process-step-num { font-family: 'Cormorant Garamond', serif; font-size: 0.8rem; color: var(--mauve); margin-bottom: 0.35rem; font-style: italic; }
+.process-step h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; color: var(--deep); margin-bottom: 0.5rem; font-weight: 400; }
+.process-step p { font-size: 0.82rem; color: #7a7080; line-height: 1.75; font-weight: 300; }
+</style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav id="navbar">
+  <div class="nav-inner glass" id="nav-inner">
+    <a href="#" aria-label="Αρχική" style="text-decoration:none;display:flex;align-items:center;gap:0.875rem;">
+      <div class="nav-logo-circle">
+        <img src="https://github.com/agelmet/NIKOLAKI/blob/main/logog.jpg?raw=true" alt="Σοφία Νικολάκη Logo">
+      </div>
+      <div style="display:flex;flex-direction:column;">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:500;color:var(--deep);line-height:1.2;">Σοφία Νικολάκη</span>
+        <span style="font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--mauve);font-weight:500;">Ψυχοθεραπεύτρια & Life Coach</span>
+      </div>
+    </a>
+
+    <div class="desktop-nav" style="display:flex;align-items:center;gap:2rem;">
+      <a href="#about" class="nav-link">Προφίλ</a>
+      <a href="#services" class="nav-link">Υπηρεσίες</a>
+      <a href="#identity" class="nav-link">Προσέγγιση</a>
+      <a href="#space" class="nav-link">Χωρος</a>
+      <a href="#reviews" class="nav-link">Κριτικές</a>
+      <a href="https://www.doctoranytime.gr/d/life-coach/nikolaki-sofia?autobook=1&acdpid=94808&autobook-dpid=94808&utm_source=gmb&utm_medium=organic&utm_campaign=actionscenter&rwg_token=AFd1xnESdvkvqmQBBwfAr9TdnRHJDi1oWIaEMWbZHNOWhbb2bYgyKlQ5zb0ezYiWvIlwjWiZ5XQz7_kmUSywZWugG18HW2HefA%3D%3D" target="_blank" class="nav-cta">Κλείστε Ραντεβού</a>
+    </div>
+
+    <button class="hamburger" id="hamburger-btn" aria-label="Μενού">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div id="mobile-menu" role="navigation">
+    <a href="#about" class="mobile-link">Προφίλ</a>
+    <a href="#services" class="mobile-link">Υπηρεσίες</a>
+    <a href="#identity" class="mobile-link">Προσέγγιση</a>
+    <a href="#space" class="mobile-link">Χώρος</a>
+    <a href="#reviews" class="mobile-link">Κριτικές</a>
+    <a href="#contact" class="mobile-link">Επικοινωνία</a>
+    <a href="https://www.doctoranytime.gr/d/life-coach/nikolaki-sofia?autobook=1&acdpid=94808&autobook-dpid=94808&utm_source=gmb&utm_medium=organic&utm_campaign=actionscenter&rwg_token=AFd1xnESdvkvqmQBBwfAr9TdnRHJDi1oWIaEMWbZHNOWhbb2bYgyKlQ5zb0ezYiWvIlwjWiZ5XQz7_kmUSywZWugG18HW2HefA%3D%3D" target="_blank" class="mob-cta mobile-link">Κλείστε Ραντεβού</a>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-overlay-side"></div>
+
+  <!-- Floating particles -->
+  <div id="particles-container"></div>
+
+  <div class="hero-content" style="padding-bottom:1rem;">
+    <div class="badge-float">
+      <span style="width:6px;height:6px;border-radius:50%;background:var(--rose);animation:fadein 0s 0s forwards, scroll-pulse 2s infinite;"></span>
+      Ψυχοθεραπεία · Life Coaching · Πόρτο Ράφτη & Μαρκόπουλο
+    </div>
+
+    <h1 class="hero-title">
+      <div class="text-reveal-line" style="animation-delay:0.3s;">
+        <span class="text-reveal-inner" style="animation-delay:0.3s;">Επουλώστε το παρελθόν.</span>
+      </div>
+      <div class="text-reveal-line">
+        <span class="text-reveal-inner" style="animation-delay:0.55s;">Οργανώστε το <em>μέλλον.</em></span>
+      </div>
+      <div class="text-reveal-line">
+        <span class="text-reveal-inner" style="animation-delay:0.8s;">Ζήστε το παρόν.</span>
+      </div>
+    </h1>
+
+    <p class="hero-sub">
+      Ψυχοθεραπεία με βάθος και Life Coaching με πράξη. Ένας χώρος χωρίς κρίση, όπου κάθε πλευρά σας αναγνωρίζεται και ενισχύεται.
+    </p>
+
+    <div style="display:flex;flex-wrap:wrap;gap:1rem;opacity:0;animation:fadein 0.8s 1.5s forwards;">
+      <a href="https://www.doctoranytime.gr/d/life-coach/nikolaki-sofia?autobook=1&acdpid=94808&autobook-dpid=94808&utm_source=gmb&utm_medium=organic&utm_campaign=actionscenter&rwg_token=AFd1xnESdvkvqmQBBwfAr9TdnRHJDi1oWIaEMWbZHNOWhbb2bYgyKlQ5zb0ezYiWvIlwjWiZ5XQz7_kmUSywZWugG18HW2HefA%3D%3D" target="_blank" class="btn-primary">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+        Κλείστε Ραντεβού
+      </a>
+      <a href="#about" class="btn-outline">
+        Γνωρίστε τη Σοφία
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-scroll-hint">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ===== STATS BAR ===== -->
+<div class="stats-bar">
+  <div class="stats-bar-inner">
+    <div class="stat-item reveal">
+      <div class="stat-num">20+</div>
+      <div class="stat-label">Ετη στο Ζεύγος</div>
+    </div>
+    <div class="stat-item reveal d1">
+      <div class="stat-num">7+</div>
+      <div class="stat-label">Ετη Κρίσεων Πανικού</div>
+    </div>
+    <div class="stat-item reveal d2">
+      <div class="stat-num">3</div>
+      <div class="stat-label">Πιστοποιήσεις Coaching</div>
+    </div>
+    <div class="stat-item reveal d3">
+      <div class="stat-num">10/10</div>
+      <div class="stat-label">Αξιολόγηση Ασθενών</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== ABOUT ===== -->
+<section id="about">
+  <div class="about-inner">
+
+    <div class="portrait-frame reveal-left">
+      <div class="portrait-outer">
+        <img src="https://github.com/agelmet/NIKOLAKI/blob/main/66.jpg?raw=true" alt="Σοφία Νικολάκη – Ψυχοθεραπεύτρια & Life Coach">
+      </div>
+      <div class="portrait-deco-1"></div>
+      <div class="portrait-deco-2"></div>
+      <div class="portrait-badge">
+        <div class="portrait-badge-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <div>
+          <p>BSc Psychology, Delaware</p>
+          <span>MSc Αντλεριανή Θεραπεία · ΕΚΠΑ Coaching</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-text reveal-right">
+      <div class="section-label">Το Προφίλ μου</div>
+      <div class="section-divider"></div>
+      <h2>Ψυχοθεραπεία & Life Coaching: <em>Προσωπική Αναπτυξη</em> με Βαθος και Πραξη</h2>
+
+      <p>Η Σοφία Νικολάκη είναι Ψυχοθεραπεύτρια, Σύμβουλος Ψυχικής Υγείας και Πιστοποιημένη Life Coach με έδρα στο Πόρτο Ράφτη και το Μαρκόπουλο. Το ακαδημαϊκό της υπόβαθρο (<strong>BSc in Psychology Science, Delaware USA</strong>) πλαισιώνεται από δύο ισχυρούς πυλώνες: την εξειδίκευση στην <strong>Αντλεριανή Συμβουλευτική και Ψυχοθεραπεία</strong> (Ε.Ε.Α.Ψ) και την πιστοποίησή της στο Life Coaching από το <strong>ΕΚΠΑ</strong>, την Association for Coaching και το EMCC.</p>
+
+      <div class="about-blockquote">
+        "Δεν χρειάζεται να αλλάξετε τη ζωή σας — αρκεί να αλλάξει η οπτική σας. Αυτό είναι η μεγάλη αλλαγή."
+      </div>
+
+      <p>Αυτός ο σπάνιος συνδυασμός της επιτρέπει να προσεγγίζει τον άνθρωπο ολιστικά: η <strong>Συστημική–Αντλεριανή ψυχοθεραπεία</strong> επουλώνει τραύματα και αποκαθιστά σχέσεις, ενώ τα πρακτικά εργαλεία του Coaching μεταφράζουν την εσωτερική αλλαγή σε πράξη — εργασία, χρόνος, οικονομικά, στόχοι.</p>
+
+      <p>Με βαθιά πίστη στις έννοιες του «ανήκειν», του σεβασμού και της ισοτιμίας, προσφέρει έναν ασφαλή, μη-επικριτικό χώρο για να αναγνωρίσετε τα μοτίβα που σας εγκλωβίζουν και να πάρετε συνειδητές, καθαρές αποφάσεις.</p>
+
+      <div class="cred-chips">
+        <span class="cred-chip">Αντλεριανή Ψυχοθεραπεία</span>
+        <span class="cred-chip">ΕΚΠΑ Life Coaching</span>
+        <span class="cred-chip">Association for Coaching</span>
+        <span class="cred-chip">EMCC</span>
+        <span class="cred-chip">BSc Psychology – Delaware</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section id="services">
+  <div class="services-inner">
+    <div class="services-header reveal">
+      <div>
+        <div class="section-label">Εξειδικευμένες Υπηρεσίες</div>
+        <div class="section-divider"></div>
+        <h2>Πώς μπορώ να σας <em>βοηθήσω</em></h2>
+      </div>
+      <a href="https://www.doctoranytime.gr/d/life-coach/nikolaki-sofia?autobook=1&acdpid=94808&autobook-dpid=94808&utm_source=gmb&utm_medium=organic&utm_campaign=actionscenter&rwg_token=AFd1xnESdvkvqmQBBwfAr9TdnRHJDi1oWIaEMWbZHNOWhbb2bYgyKlQ5zb0ezYiWvIlwjWiZ5XQz7_kmUSywZWugG18HW2HefA%3D%3D" target="_blank" class="btn-primary" style="flex-shrink:0;">Κλείστε Ραντεβού</a>
+    </div>
+
+    <div class="services-grid">
+
+      <!-- Large card: Couple -->
+      <div class="service-card service-large reveal">
+        <div class="service-num">01</div>
+        <div style="display:flex;align-items:flex-start;gap:1.5rem;flex-wrap:wrap;">
+          <div class="service-icon-wrap" style="width:4rem;height:4rem;border-radius:1.25rem;flex-shrink:0;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--burgundy)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <div style="flex:1;min-width:220px;">
+            <h3>Θεραπεία Ζεύγους & Διαπροσωπικών Σχέσεων</h3>
+            <div style="display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:1rem;margin-top:0.25rem;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--mauve)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span style="font-size:0.72rem;color:var(--mauve);font-weight:500;">20 Ετη Εξειδικευμένης Εμπειρίας</span>
+            </div>
+          </div>
+        </div>
+        <p style="margin-top:0.5rem;">Δεν εστιάζουμε στο «ποιος έχει δίκιο ή άδικο», αλλά στο <em>μοτίβο</em> της σχέσης και τον ρόλο του καθενός μέσα σε αυτό. Δουλεύουμε πάνω σε θέματα εμπιστοσύνης, ζήλιας και συναισθηματικής απόστασης. Σπάμε τους φαύλους κύκλους σύγκρουσης, βελτιώνουμε την επικοινωνία και σας βοηθάμε να πάρετε συνειδητές αποφάσεις — είτε αυτό σημαίνει επανασύνδεση, είτε μια πιο ώριμη, ξεκάθαρη κατεύθυνση.</p>
+        <div class="service-tags" style="margin-top:1.5rem;">
+          <span class="service-tag">Σχέσεις – 55'</span>
+          <span class="service-tag">Θεραπεία Ζεύγους – 90'</span>
+          <span class="service-tag">Εμπιστοσύνη</span>
+          <span class="service-tag">Επικοινωνία</span>
+        </div>
+      </div>
+
+      <!-- Large card: Crisis -->
+      <div class="service-card service-large reveal d1">
+        <div class="service-num">02</div>
+        <div style="display:flex;align-items:flex-start;gap:1.5rem;flex-wrap:wrap;">
+          <div class="service-icon-wrap" style="width:4rem;height:4rem;border-radius:1.25rem;flex-shrink:0;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--burgundy)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <div style="flex:1;min-width:220px;">
+            <h3>Διαχείριση Κρίσεων Πανικού, Φόβου & Θυμού</h3>
+            <div style="display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:1rem;margin-top:0.25rem;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--mauve)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span style="font-size:0.72rem;color:var(--mauve);font-weight:500;">7 Ετη Εξειδίκευσης</span>
+            </div>
+          </div>
+        </div>
+        <p style="margin-top:0.5rem;">Ακολουθώντας τη Συστημική προσέγγιση, ο πρώτος στόχος είναι η <em>άμεση μείωση</em> — έως και εξάλειψη — των κρίσεων πανικού μέσα από εξειδικευμένες τεχνικές ανακούφισης. Στη συνέχεια, σε ένα ασφαλές περιβάλλον, διερευνούμε με ηρεμία τα βαθύτερα αίτια. Παράλληλα, στοχευμένη υποστήριξη για τη λειτουργική διαχείριση του θυμού και του καθημερινού στρες.</p>
+        <div class="service-tags" style="margin-top:1.5rem;">
+          <span class="service-tag">Φόβος & Πανικός – 55'</span>
+          <span class="service-tag">Φοβίες – 55'</span>
+          <span class="service-tag">Θυμός – 55'</span>
+          <span class="service-tag">Αγχος & Στρες</span>
+        </div>
+      </div>
+
+      <!-- Small card: Coaching -->
+      <div class="service-card reveal">
+        <div class="service-num">03</div>
+        <div class="service-icon-wrap">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--burgundy)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        </div>
+        <h3>Life Coaching, Mentoring & Επαγγελματική Αναπτυξη</h3>
+        <p>Μετακινούμαστε από το «γιατί» στο «πώς». Εστιάζουμε στο παρόν και το μέλλον: διαχείριση χρόνου, οικονομικά, εργασιακές συγκρούσεις, αυτοπεποίθηση και επίτευξη συγκεκριμένων στόχων.</p>
+        <div class="service-tags">
+          <span class="service-tag">Coaching – 55'</span>
+          <span class="service-tag">Mentoring</span>
+          <span class="service-tag">Αυτοβελτίωση</span>
+        </div>
+      </div>
+
+      <!-- Small card: Individual -->
+      <div class="service-card reveal d1">
+        <div class="service-num">04</div>
+        <div class="service-icon-wrap">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--burgundy)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>Ατομική, Οικογενειακή Θεραπεία & Online Συνεδρίες</h3>
+        <p>Ατομική συμβουλευτική ενηλίκων και διευρυμένες συνεδρίες Οικογένειας (90'). Για όσους κατοικούν εκτός Μεσογείων, όλες οι υπηρεσίες παρέχονται και διαδικτυακά με την ίδια αποτελεσματικότητα.</p>
+        <div class="service-tags">
+          <span class="service-tag">Ατομική – 55'</span>
+          <span class="service-tag">Οικογένεια – 90'</span>
+          <span class="service-tag">Βιντεοκλήση</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== IDENTITY / PILLARS ===== -->
+<section id="identity">
+  <div class="identity-deco-1"></div>
+  <div class="identity-deco-2"></div>
+
+  <div class="identity-inner">
+    <div class="identity-header reveal">
+      <div class="section-label" style="color:var(--rose);">Θεραπευτική Ταυτότητα</div>
+      <div class="section-divider-center" style="background:linear-gradient(to right, transparent, var(--rose), transparent);width:3rem;height:1px;margin:1rem auto 1.5rem;"></div>
+      <h2>Τι κάνει την προσέγγισή μου <em>να ξεχωρίζει</em></h2>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start;" class="id-layout">
+      <style>.id-layout { } @media(max-width:900px){.id-layout{grid-template-columns:1fr !important;}.id-img-col{display:none !important;}}</style>
+      <!-- Cards column -->
+      <div style="display:flex;flex-direction:column;gap:1.25rem;">
+        <div class="identity-card reveal">
+          <span class="identity-num">01</span>
+          <div class="identity-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--rose)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+          </div>
+          <h4>Ο Διπλός Ρόλος: Θεραπεύτρια & Coach</h4>
+          <p>Έχετε το μοναδικό πλεονέκτημα να δουλεύετε με έναν επαγγελματία που διαθέτει το κλινικό βάθος να θεραπεύσει το παρελθόν (Ψυχοθεραπεία) και τα δομημένα εργαλεία για να οργανώσει το μέλλον (Coaching).</p>
+        </div>
+        <div class="identity-card reveal d1">
+          <span class="identity-num">02</span>
+          <div class="identity-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--rose)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>
+          </div>
+          <h4>Η Δύναμη της Αντλεριανής Προσέγγισης</h4>
+          <p>Εξειδίκευση στην Αντλεριανή Ψυχολογία — μια σχολή που πιστεύει στη δύναμη της ισοτιμίας, του σεβασμού και της ανάγκης του ανθρώπου να «ανήκει», στοιχεία που μεταμορφώνουν ριζικά τις σχέσεις.</p>
+        </div>
+        <div class="identity-card reveal d2">
+          <span class="identity-num">03</span>
+          <div class="identity-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--rose)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          </div>
+          <h4>Κορυφαίες Πιστοποιήσεις Coaching</h4>
+          <p>Η πρακτική στο Life Coaching φέρει την πιστοποίηση του ΕΚΠΑ και κορυφαίων ευρωπαϊκών φορέων (EMCC, Association for Coaching), διασφαλίζοντας αυστηρό επαγγελματισμό και μεθοδολογία.</p>
+        </div>
+        <div class="identity-card reveal d3">
+          <span class="identity-num">04</span>
+          <div class="identity-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--rose)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <h4>20ετής Εξειδίκευση στο Ζεύγος</h4>
+          <p>Η θεραπεία ζεύγους είναι το πιο απαιτητικό κομμάτι της ψυχοθεραπείας. Με 20 χρόνια εστιασμένης εμπειρίας, διαθέτω την ψυχραιμία και την τεχνογνωσία να διαχειριστώ τις πιο έντονες κρίσεις μιας σχέσης.</p>
+        </div>
+      </div>
+
+      <!-- Image column -->
+      <div class="id-img-col reveal-right" style="position:sticky;top:8rem;border-radius:2rem;overflow:hidden;aspect-ratio:3/4;box-shadow:0 40px 80px rgba(0,0,0,0.4);">
+        <img src="https://github.com/agelmet/NIKOLAKI/blob/main/77.jpg?raw=true" alt="Θεραπευτικός χώρος" style="width:100%;height:100%;object-fit:cover;object-position:center;transition:transform 10s ease;">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(26,21,32,0.6) 0%,transparent 50%);"></div>
+        <div style="position:absolute;bottom:2rem;left:2rem;right:2rem;">
+          <p style="font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--rose);margin-bottom:0.5rem;">Θεραπευτική Προσέγγιση</p>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:1.35rem;color:#fff;line-height:1.5;font-style:italic;">"Κάθε άνθρωπος φέρει μέσα του τις απαντήσεις. Η δουλειά μας είναι να τις ανακαλύψουμε μαζί."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROCESS ===== -->
+<section id="process">
+  <div class="process-inner">
+    <div class="text-center reveal">
+      <div class="section-label" style="text-align:center;">Η Πορεία Μαζί</div>
+      <div class="section-divider-center"></div>
+      <h2 style="font-size:clamp(2.5rem,4vw,3.8rem);color:var(--deep);margin-bottom:0.5rem;">Τα <em style="font-style:italic;color:var(--mauve);">τέσσερα βήματα</em> της αλλαγής</h2>
+      <p style="font-size:0.95rem;color:#7a7080;max-width:500px;margin:0.75rem auto 0;font-weight:300;line-height:1.75;">Μια δομημένη αλλά εντελώς εξατομικευμένη διαδρομή, προσαρμοσμένη στο δικό σας ρυθμό.</p>
+    </div>
+
+    <div class="process-steps">
+      <div class="process-step reveal">
+        <div class="process-dot">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--mauve)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 12 19.79 19.79 0 0 1 1.97 3.4 2 2 0 0 1 3.93 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <div class="process-step-num">Βήμα ένα</div>
+        <h4>Επικοινωνία & Ραντεβού</h4>
+        <p>Η πρώτη κίνηση φροντίδας. Κλείνουμε τη μέρα και ώρα που σας εξυπηρετεί.</p>
+      </div>
+      <div class="process-step reveal d1">
+        <div class="process-dot">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--mauve)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+        </div>
+        <div class="process-step-num">Βήμα δύο</div>
+        <h4>Πρώτη Αξιολόγηση</h4>
+        <p>Γνωριμία σε ασφαλές περιβάλλον. Ακούμε τις ανάγκες σας χωρίς καμία κριτική.</p>
+      </div>
+      <div class="process-step reveal d2">
+        <div class="process-dot">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--mauve)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        </div>
+        <div class="process-step-num">Βήμα τρία</div>
+        <h4>Εξατομικευμένο Πλάνο</h4>
+        <p>Σχεδιάζουμε τη θεραπευτική προσέγγιση που ταιριάζει αποκλειστικά στη δική σας ιδιοσυγκρασία.</p>
+      </div>
+      <div class="process-step reveal d3">
+        <div class="process-dot">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--mauve)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="process-step-num">Βήμα τέσσερα</div>
+        <h4>Επούλωση & Αναπτυξη</h4>
+        <p>Σταθερά βήματα προς την αυτογνωσία, την ανθεκτικότητα και την ολοκλήρωση.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SPACE / GALLERY ===== -->
+<section id="space">
+  <div class="space-inner">
+    <div class="reveal" style="margin-bottom:3rem;">
+      <div class="section-label">Ο Χωρος Μου</div>
+      <div class="section-divider"></div>
+      <h2 style="font-size:clamp(2.5rem,4vw,3.8rem);color:var(--deep);max-width:520px;">Ένα περιβάλλον <em style="font-style:italic;color:var(--mauve);">σχεδιασμένο</em> για ηρεμία</h2>
+      <p style="font-size:0.93rem;color:#7a7080;max-width:480px;margin-top:0.75rem;font-weight:300;line-height:1.8;">Η θεραπεία ξεκινά από τον χώρο. Δείτε το περιβάλλον όπου θα νιώσετε απόλυτα ασφαλείς.</p>
+    </div>
+
+    <div class="gallery-masonry reveal">
+      <button class="gallery-item" onclick="openLightbox('https://github.com/agelmet/NIKOLAKI/blob/main/11.jpg?raw=true')">
+        <img src="https://github.com/agelmet/NIKOLAKI/blob/main/11.jpg?raw=true" alt="Χώρος 1" loading="lazy">
+        <div class="gallery-item-overlay">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+        </div>
+      </button>
+      <button class="gallery-item" onclick="openLightbox('https://github.com/agelmet/NIKOLAKI/blob/main/33.jpg?raw=true')">
+        <img src="https://github.com/agelmet/NIKOLAKI/blob/main/33.jpg?raw=true" alt="Χώρος 2" loading="lazy">
+        <div class="gallery-item-overlay">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+        </div>
+      </button>
+      <button class="gallery-item" onclick="openLightbox('https://github.com/agelmet/NIKOLAKI/blob/main/22.jpg?raw=true')">
+        <img src="https://github.com/agelmet/NIKOLAKI/blob/main/22.jpg?raw=true" alt="Χώρος 5" loading="lazy">
+        <div class="gallery-item-overlay">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+        </div>
+      </button>
+      <button class="gallery-item" onclick="openLightbox('https://github.com/agelmet/NIKOLAKI/blob/main/44.jpg?raw=true')">
+        <img src="https://github.com/agelmet/NIKOLAKI/blob/main/44.jpg?raw=true" alt="Χώρος 3" loading="lazy">
+        <div class="gallery-item-overlay">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+        </div>
+      </button>
+      <button class="gallery-item" onclick="openLightbox('https://github.com/agelmet/NIKOLAKI/blob/main/55.jpg?raw=true')">
+        <img src="https://github.com/agelmet/NIKOLAKI/blob/main/55.jpg?raw=true" alt="Χώρος 4" loading="lazy">
+        <div class="gallery-item-overlay">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+        </div>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LIGHTBOX ===== -->
+<div id="lightbox" onclick="closeLightbox()">
+  <button id="lightbox-close" onclick="closeLightbox()" aria-label="Κλείσιμο">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <img id="lightbox-img" src="" alt="Enlarged" onclick="event.stopPropagation()">
+</div>
+
+<!-- ===== REVIEWS ===== -->
+<section id="reviews">
+  <div class="reviews-inner">
+    <div class="reviews-header reveal">
+      <div class="section-label">Εμπειρίες Θεραπευόμενων</div>
+      <div class="section-divider-center"></div>
+      <h2>Τι λένε <em>οι άνθρωποι</em> που εμπιστεύτηκαν</h2>
+      <p style="margin-top:0.75rem;font-size:0.93rem;color:#7a7080;font-weight:300;">Η εμπιστοσύνη σας είναι η μεγαλύτερη απόδειξη της δουλειάς μας.</p>
+    </div>
+
+    <div class="carousel-wrapper reveal">
+      <div class="carousel-track-outer">
+        <div class="carousel-track" id="carousel-track">
+
+          <div class="review-card">
+            <div class="review-score">10.0</div>
+            <div class="review-stars">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#D4A96A" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#D4A96A" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#D4A96A" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#D4A96A" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#D4A96A" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <p class="review-text">"Απλά υπέροχη. Με βοήθησε απίστευτα. Της έχω μεγάλη εμπιστοσύνη και της ευχαριστώ για όλα."</p>
+            <div class="review-footer">
+              <div>
+                <div class="review-name">Χρήστος</div>
+                <div class="review-date">16 Απριλίου 2024</div>
+              </div>
+              <img src="https://www.doctoranytime.gr/images/logo-rebranding.svg" class="da-logo" alt="Doctoranytime">
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-score">10.0</div>
+            <div class="review-stars">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#D4A96A" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#D4A96A" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#D4A96A" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#D4A96A" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#D4A96A" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <p class="review-text">"Απλά εξαιρετική, καταρτισμένη και αποτελεσματική. Αμέσως αισθάνθηκα ότι βρίσκομαι στα σωστά χέρια."</p>
+            <div class="review-footer">
+              <div>
+                <div class="review-name">Ιωάννης</div>
+                <div class="review-date">16 Απριλίου 2024</div>
+              </div>
+              <img src="https://www.doctoranytime.gr/images/logo-rebranding.svg" class="da-logo" alt="Doctoranytime">
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-score">10.0</div>
+            <div class="review-stars">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#D4A96A" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#D4A96A" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#D4A96A" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#D4A96A" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#D4A96A" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <p class="review-text">"Κατάφερε να κερδίσει την εμπιστοσύνη μου από τα πρώτα λεπτά. Η ενσυναίσθηση και ηρεμία της με βοήθησαν να ανακαλύψω πράγματα κρυφά για μένα χρόνια τώρα."</p>
+            <div class="review-footer">
+              <div>
+                <div class="review-name">Christo</div>
+                <div class="review-date">28 Σεπτεμβρίου 2023</div>
+              </div>
+              <img src="https://www.doctoranytime.gr/images/logo-rebranding.svg" class="da-logo" alt="Doctoranytime">
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-score">10.0</div>
+            <div class="review-stars">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#D4A96A" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#D4A96A" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#D4A96A" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#D4A96A" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#D4A96A" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <p class="review-text">"Δεν χρειάστηκε να αλλάξω τη ζωή μου — αρκεί που άλλαξε η οπτική μου σε αρκετά πράγματα. Αυτό είναι η μεγάλη αλλαγή."</p>
+            <div class="review-footer">
+              <div>
+                <div class="review-name">Αναστάσιος</div>
+                <div class="review-date">26 Σεπτεμβρίου 2023</div>
+              </div>
+              <img src="https://www.doctoranytime.gr/images/logo-rebranding.svg" class="da-logo" alt="Doctoranytime">
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-score">10.0</div>
+            <div class="review-stars">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#D4A96A" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#D4A96A" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#D4A96A" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#D4A96A" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#D4A96A" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <p class="review-text">"Εντόπισε απευθείας το πρόβλημά μου. Με πολύ σεβασμό και ζεστασιά στάθηκε δίπλα μου. Η υψηλή ενσυναίσθησή της ήταν ο καταλύτης για να ξεμπλοκάρω."</p>
+            <div class="review-footer">
+              <div>
+                <div class="review-name">Ελένη</div>
+                <div class="review-date">26 Σεπτεμβρίου 2023</div>
+              </div>
+              <img src="https://www.doctoranytime.gr/images/logo-rebranding.svg" class="da-logo" alt="Doctoranytime">
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="carousel-nav">
+        <button class="carousel-btn" id="carousel-prev" aria-label="Προηγούμενο">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="carousel-btn" id="carousel-next" aria-label="Επόμενο">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="reviews-cta reveal">
+      <a href="https://www.doctoranytime.gr/d/Symvoulos-psychikis-ygeias/nikolaki-sofia-2" target="_blank" rel="noopener">
+        Διαβάστε όλες τις κριτικές στο
+        <img src="https://www.doctoranytime.gr/images/logo-rebranding.svg" style="height:13px;display:inline-block;vertical-align:middle;margin-left:4px;" alt="Doctoranytime">
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER / CONTACT ===== -->
+<footer id="contact">
+  <div class="footer-deco"></div>
+  <div class="footer-inner">
+
+    <div class="footer-top">
+      <div class="footer-brand reveal">
+        <a href="#" style="text-decoration:none;">
+          <div class="footer-logo">
+            <img src="https://github.com/agelmet/NIKOLAKI/blob/main/logog.jpg?raw=true" alt="Σοφία Νικολάκη">
+          </div>
+        </a>
+        <h3>Σοφία Νικολάκη</h3>
+        <p>Ψυχοθεραπεύτρια, Σύμβουλος Ψυχικής Υγείας και Πιστοποιημένη Life Coach. Η επούλωση ξεκινά με ένα βήμα.</p>
+        <a href="https://www.doctoranytime.gr/d/life-coach/nikolaki-sofia?autobook=1&acdpid=94808&autobook-dpid=94808&utm_source=gmb&utm_medium=organic&utm_campaign=actionscenter&rwg_token=AFd1xnESdvkvqmQBBwfAr9TdnRHJDi1oWIaEMWbZHNOWhbb2bYgyKlQ5zb0ezYiWvIlwjWiZ5XQz7_kmUSywZWugG18HW2HefA%3D%3D" target="_blank" class="footer-cta-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+          Κλείστε Ραντεβού
+        </a>
+      </div>
+
+      <div class="footer-col reveal d1">
+        <h4>Στοιχεια Επικοινωνιας</h4>
+        <ul>
+          <li>
+            <svg class="fi" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Ανδρούτσου 5,<br>Πόρτο Ράφτη, Αττική</span>
+          </li>
+          <li>
+            <svg class="fi" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Γ. Παπαβασιλείου 2,<br>Μαρκόπουλο, Αττική</span>
+          </li>
+          <li>
+            <svg class="fi" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 12 19.79 19.79 0 0 1 1.97 3.4 2 2 0 0 1 3.93 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <a href="tel:+306987912712">+30 698 791 2712</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col reveal d2">
+        <h4>Ωραριο Λειτουργιας</h4>
+        <ul>
+          <li>
+            <svg class="fi" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>ΔΕΥΤΕΡΑ - ΣΑΒΒΑΤΟ</span>
+          </li>
+          <li style="padding-left:1.6rem;">
+            <span style="color:var(--rose);font-size:0.8rem;">Κατόπιν Ραντεβού</span>
+          </li>
+        </ul>
+
+        <div style="margin-top:2rem;">
+          <h4 style="margin-bottom:1rem;">Βρείτε με</h4>
+          <div class="social-links">
+            <a href="https://www.instagram.com/snikolaki/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="https://www.facebook.com/snikolaki/" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/sophia-nikolaki-422723a2/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="https://www.doctoranytime.gr/d/Symvoulos-psychikis-ygeias/nikolaki-sofia-2" target="_blank" rel="noopener" class="social-link" aria-label="Doctoranytime" style="padding:0.3rem;">
+              <img src="https://www.doctoranytime.gr/images/logo-rebranding.svg" style="height:10px;filter:brightness(0) invert(1);opacity:0.6;" alt="DA">
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-col reveal d3">
+        <h4>Εξειδικευσεις</h4>
+        <ul>
+          <li><span style="width:4px;height:4px;border-radius:50%;background:var(--mauve);flex-shrink:0;margin-top:0.45rem;"></span><span>Αντλεριανή Ψυχοθεραπεία</span></li>
+          <li><span style="width:4px;height:4px;border-radius:50%;background:var(--mauve);flex-shrink:0;margin-top:0.45rem;"></span><span>Life Coaching (ΕΚΠΑ)</span></li>
+          <li><span style="width:4px;height:4px;border-radius:50%;background:var(--mauve);flex-shrink:0;margin-top:0.45rem;"></span><span>Θεραπεία Ζεύγους (20 ετη)</span></li>
+          <li><span style="width:4px;height:4px;border-radius:50%;background:var(--mauve);flex-shrink:0;margin-top:0.45rem;"></span><span>Κρίσεις Πανικού & Φοβίες</span></li>
+          <li><span style="width:4px;height:4px;border-radius:50%;background:var(--mauve);flex-shrink:0;margin-top:0.45rem;"></span><span>Ατομική & Οικογενειακή Θεραπεία</span></li>
+          <li><span style="width:4px;height:4px;border-radius:50%;background:var(--mauve);flex-shrink:0;margin-top:0.45rem;"></span><span>Online Συνεδρίες</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Σοφία Νικολάκη. Ολα τα δικαιώματα διατηρούνται.</p>
+      <p class="by">Σχεδιάστηκε από <a href="https://advonmedia.com" target="_blank" rel="noopener">Advon Media</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== SCRIPTS ===== -->
+<script>
+// Particles
+(function() {
+  const container = document.getElementById('particles-container');
+  if (!container) return;
+  for (let i = 0; i < 18; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    const size = Math.random() * 80 + 20;
+    p.style.cssText = `
+      width:${size}px; height:${size}px;
+      left:${Math.random() * 100}%;
+      bottom:${Math.random() * 30}%;
+      animation-duration:${Math.random() * 15 + 10}s;
+      animation-delay:${Math.random() * -20}s;
+      opacity:${Math.random() * 0.4 + 0.1};
+    `;
+    container.appendChild(p);
+  }
+})();
+
+// Navbar scroll
+const navbar = document.getElementById('navbar');
+const navInner = document.getElementById('nav-inner');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 60) {
+    navbar.classList.add('scrolled');
+    navInner.style.boxShadow = '0 8px 40px rgba(0,0,0,0.08)';
+  } else {
+    navbar.classList.remove('scrolled');
+    navInner.style.boxShadow = '';
+  }
+}, { passive: true });
+
+// Mobile menu
+const hamburgerBtn = document.getElementById('hamburger-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+hamburgerBtn.addEventListener('click', () => {
+  mobileMenu.classList.toggle('open');
+});
+document.querySelectorAll('.mobile-link').forEach(link => {
+  link.addEventListener('click', () => mobileMenu.classList.remove('open'));
+});
+
+// Intersection Observer for reveals
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
+
+// Lightbox
+function openLightbox(src) {
+  const lb = document.getElementById('lightbox');
+  const img = document.getElementById('lightbox-img');
+  img.src = src;
+  lb.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  const lb = document.getElementById('lightbox');
+  lb.classList.remove('active');
+  document.body.style.overflow = '';
+  setTimeout(() => { document.getElementById('lightbox-img').src = ''; }, 400);
+}
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeLightbox();
+});
+
+// Carousel
+const track = document.getElementById('carousel-track');
+const prevBtn = document.getElementById('carousel-prev');
+const nextBtn = document.getElementById('carousel-next');
+let currentIndex = 0;
+
+function getVisibleCount() {
+  if (window.innerWidth <= 560) return 1;
+  if (window.innerWidth <= 900) return 2;
+  return 3;
+}
+
+function updateCarousel() {
+  const cards = track.querySelectorAll('.review-card');
+  const cardWidth = cards[0].offsetWidth + 24; // gap
+  const visible = getVisibleCount();
+  const maxIndex = cards.length - visible;
+  currentIndex = Math.max(0, Math.min(currentIndex, maxIndex));
+  track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+}
+
+prevBtn.addEventListener('click', () => { currentIndex = Math.max(0, currentIndex - 1); updateCarousel(); });
+nextBtn.addEventListener('click', () => {
+  const cards = track.querySelectorAll('.review-card');
+  const visible = getVisibleCount();
+  currentIndex = Math.min(cards.length - visible, currentIndex + 1);
+  updateCarousel();
+});
+window.addEventListener('resize', updateCarousel, { passive: true });
+
+// Auto-advance carousel
+setInterval(() => {
+  const cards = track.querySelectorAll('.review-card');
+  const visible = getVisibleCount();
+  if (currentIndex >= cards.length - visible) { currentIndex = 0; } else { currentIndex++; }
+  updateCarousel();
+}, 5000);
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+</script>
+</body>
+</html>
